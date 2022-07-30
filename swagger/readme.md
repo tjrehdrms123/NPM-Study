@@ -2,7 +2,7 @@
 
 ### swagger 셋팅
 
-> swagger-ui-express, swagger-jsdoc를 먼저 설치한다 그 후 아래의 코드를 셋팅한다
+> [swagger-ui-express](https://github.com/tjrehdrms123/Node-Express-Study/blob/main/swagger/readme-swaggerUi.md), [swagger-jsdoc](https://github.com/tjrehdrms123/Node-Express-Study/blob/main/swagger/readme-swagger-jsdoc.md)를 먼저 설치한다 그 후 아래의 코드를 셋팅한다
 
 ### server.js
 
