@@ -9,13 +9,6 @@
 ```js
 const { swaggerUi, specs } = require("./swagger_modules/swagger");
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
-app.use(
-  morgan(":method :url | :status | :response-time ms | :date[iso] | ", {
-    skip: (req, res) => {
-      return req.originalUrl.startsWith("/parse");
-    },
-  })
-);
 ```
 
 ### swagger_modules/swagger.js
