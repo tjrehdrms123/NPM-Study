@@ -24,3 +24,9 @@
 > [https://www.npmjs.com/package/crypto-js](https://www.npmjs.com/package/crypto-js)
 
 > [https://cryptojs.gitbook.io/docs/](https://cryptojs.gitbook.io/docs/)
+
+### 참고 문서
+
+> [https://www.lesstif.com/ws/rest-api-hmac-87949394.html](https://www.lesstif.com/ws/rest-api-hmac-87949394.html)
+
+> [https://defineall.tistory.com/701#crypto-js%--%EC%--%AC%EC%-A%A-%---%--AES%--%EC%--%--%EB%B-%B-%ED%--%B-%ED%--%--%---](https://defineall.tistory.com/701#crypto-js%--%EC%--%AC%EC%-A%A-%---%--AES%--%EC%--%--%EB%B-%B-%ED%--%B-%ED%--%--%---)
