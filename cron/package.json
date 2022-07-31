@@ -1,0 +1,16 @@
+{
+  "name": "cron",
+  "version": "1.0.0",
+  "description": "> crontab기반의 node.js용 작업 스케줄러이다",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-cron": "^3.0.1",
+    "uuid": "^8.3.2"
+  }
+}
