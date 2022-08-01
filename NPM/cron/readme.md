@@ -60,8 +60,6 @@ npm i uuid
 
 ### 공식 문서
 
-```
-
-
 > [https://www.npmjs.com/package/node-cron](https://www.npmjs.com/package/node-cron)
-```
+
+### 실행 이미지

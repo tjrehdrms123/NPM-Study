@@ -22,3 +22,8 @@
 ### 참고 문서
 
 > [https://choice91.tistory.com/62](https://choice91.tistory.com/62)
+
+### 샘플 이미지
+![mailer](../../images/NPM/mailer.png)
+
+![mailer](../../images/NPM/mailer02.png)

@@ -9,6 +9,9 @@ app.use(
     },
   })
 );
+app.get("/", (req, res) => {
+  res.send("hi");
+});
 app.listen(3000, function () {
   console.log("start! express server on port 3000");
 });
