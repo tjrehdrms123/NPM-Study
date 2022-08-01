@@ -17,3 +17,6 @@ npm i nodemon
 
 ### 공식 문서
 > [https://www.npmjs.com/package/nodemon](https://www.npmjs.com/package/nodemon)
+
+### 샘플 이미지
+![mailer](../../images/NPM/nodemon.png)

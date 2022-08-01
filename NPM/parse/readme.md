@@ -40,3 +40,8 @@ URL : http://localhost:3601/dashboard
 ID : admin
 PW : 1
 ```
+
+### 샘플 이미지
+![parselogin](../../images/NPM/parselogin.png)
+
+![parse](../../images/NPM/parse.png)
