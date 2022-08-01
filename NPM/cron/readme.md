@@ -63,3 +63,4 @@ npm i uuid
 > [https://www.npmjs.com/package/node-cron](https://www.npmjs.com/package/node-cron)
 
 ### 실행 이미지
+![cron](../../images/NPM/cron.png)
