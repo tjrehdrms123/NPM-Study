@@ -26,3 +26,6 @@ app.listen(3000, function () {
 ### 공식 문서
 
 > [https://www.npmjs.com/package/express](https://www.npmjs.com/package/express)
+
+### 샘플 이미지
+![express](../../images/NPM/express.png)

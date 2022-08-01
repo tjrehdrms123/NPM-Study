@@ -54,3 +54,6 @@ definitions:
         type: "string"
         example: "비밀번호"
 ```
+
+### 샘플 이미지
+![swagger](../../images/NPM/swagger.png)

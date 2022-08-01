@@ -35,3 +35,6 @@ app.use(
 ### 공식 문서
 
 > [https://www.npmjs.com/package/morgan](https://www.npmjs.com/package/morgan)
+
+### 샘플 이미지
+![mailer](../../images/NPM/morgan.png)

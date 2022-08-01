@@ -30,3 +30,6 @@
 > [https://www.lesstif.com/ws/rest-api-hmac-87949394.html](https://www.lesstif.com/ws/rest-api-hmac-87949394.html)
 
 > [https://defineall.tistory.com/701#crypto-js%--%EC%--%AC%EC%-A%A-%---%--AES%--%EC%--%--%EB%B-%B-%ED%--%B-%ED%--%--%---](https://defineall.tistory.com/701#crypto-js%--%EC%--%AC%EC%-A%A-%---%--AES%--%EC%--%--%EB%B-%B-%ED%--%B-%ED%--%--%---)
+
+### 샘플 이미지
+![crypto](../../images/NPM/crypto.png)
