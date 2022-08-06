@@ -11,4 +11,5 @@
 > [https://www.npmjs.com/package/jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
 
 ### 샘플 이미지
-![jest](../../images/NPM/jest.png)
+
+![jwt](../../images/NPM/jwt.png)
