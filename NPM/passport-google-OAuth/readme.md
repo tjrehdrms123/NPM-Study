@@ -1,28 +1,12 @@
 # passport-google-OAuth
 
 ### passport-google-OAuth 설명
+ - passport-google-OAuth를 통해 google 로그인을 구현하기 위해 DB 연결을 해야되는 예제 밖에 없기 때문에 DB 연결 없이 구현
 
 > 구글 로그인을 위한 패키지
 > passport는 '어떤 로그인 방식을 취하냐' 를 대명사로 strategy(전략)이라고 나타냅니다.
 
-### Error : refreshToken undefined
-
-- [https://github.com/mstade/passport-google-oauth2/issues/5](https://github.com/mstade/passport-google-oauth2/issues/5)
-
-accessType: "offline", prompt: "consent" 해당 값이 있는지 확인해야 됩니다
-
-```js
-app.get(
-  "/auth/google",
-  passport.authenticate("google", {
-    scope: ["profile"],
-    accessType: "offline",
-    prompt: "consent",
-  })
-);
-```
-
-### Example response
+### Example response 가비지 데이터
 
 ```js
 accessToken :  ya29.A0AVA9y1tAsbXZ7bDGSSw_Lh
@@ -70,4 +54,55 @@ profile :  {
 
 > [https://github.com/xKeegan01/passport-google-oauth20/blob/main/app.js](https://github.com/xKeegan01/passport-google-oauth20/blob/main/app.js)
 
-### 샘플 이미지
+
+<br/>
+
+
+# 발생한 에러 모음
+### Error : refreshToken undefined
+
+- [https://github.com/mstade/passport-google-oauth2/issues/5](https://github.com/mstade/passport-google-oauth2/issues/5)
+
+accessType: "offline", prompt: "consent" 해당 값이 있는지 확인해야 됩니다
+
+```js
+app.get(
+  "/auth/google",
+  passport.authenticate("google", {
+    scope: ["profile"],
+    accessType: "offline",
+    prompt: "consent",
+  })
+);
+```
+
+### Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+```js
+const session = require("express-session"); //세션관리용 미들웨어
+app.use(
+  session({
+    httpOnly: true, //자바스크립트를 통해 세션 쿠키를 사용할 수 없도록 함
+    secure: true, //https 환경에서만 session 정보를 주고받도록처리
+    secret: "secret key", //암호화하는 데 쓰일 키
+    resave: false, //세션을 언제나 저장할지 설정함
+    saveUninitialized: true, //세션이 저장되기 전 uninitialized 상태로 미리 만들어 저장
+    cookie: {
+      //세션 쿠키 설정 (세션 관리 시 클라이언트에 보내는 쿠키)
+      httpOnly: true,
+      Secure: true,
+    },
+  })
+);
+```
+
+### Error: failed to serialize user into session
+ - https://stackoverflow.com/questions/19948816/passport-js-error-failed-to-serialize-user-into-session
+```js
+passport.serializeUser(function (user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function (user, done) {
+  done(null, user);
+});
+```
