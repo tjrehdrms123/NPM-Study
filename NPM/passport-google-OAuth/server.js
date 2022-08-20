@@ -24,9 +24,9 @@ app.use(
 passport.use(
   new GoogleStrategy(
     {
-      clientID: passports.client_id,
-      clientSecret: passports.client_secret,
-      callbackURL: passports.callbackURL,
+      clientID: passports.google.client_id,
+      clientSecret: passports.google.client_secret,
+      callbackURL: passports.google.callbackURL,
     },
     function (accessToken, refreshToken, profile, cb) {
       console.log("accessToken : ", accessToken);
