@@ -40,9 +40,17 @@ router.get("/login", function (request, response) {
 //   }
 // });
 
-router.get("/logout", function (request, response) {
-  request.session.destroy(function (err) {
-    response.redirect("/");
+router.get("/logout", function (request, response, next) {
+  request.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    // 로그아웃이 시간차에 의해 안되는 문제는 수동으로 세션 삭제 destory
+    request.session.destroy(function (err) {
+      request.session.save(function () {
+        response.redirect("/");
+      });
+    });
   });
 });
 
