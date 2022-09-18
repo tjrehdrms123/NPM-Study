@@ -20,6 +20,18 @@ app.use(
   })
 );
 
+// passport는 express-session을 내부 적으로 사용하기 때문에 express-session 미들웨어 다음에 사용해야된다
+var passport = require("passport");
+var LocalStrategy = require("passport-local");
+
+app.post(
+  "/auth/login_process",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/auth/login",
+  })
+);
+
 app.get("*", function (request, response, next) {
   fs.readdir("./data", function (error, filelist) {
     request.list = filelist;
