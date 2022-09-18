@@ -32,6 +32,7 @@ var authData = {
 
 app.use(passport.initialize());
 app.use(passport.session());
+// (2)
 passport.serializeUser(function (user, done) {
   // 첫 로그인에 성공했다면 LocalStrategy의 첫번째 인자를 받음
   done(null, user.email);
@@ -43,6 +44,7 @@ passport.deserializeUser(function (id, done) {
   done(null, authData);
 });
 
+// (1)
 passport.use(
   new LocalStrategy(
     {
@@ -68,6 +70,7 @@ passport.use(
   )
 );
 
+// (3)
 app.post(
   "/auth/login_process",
   passport.authenticate("local", {
