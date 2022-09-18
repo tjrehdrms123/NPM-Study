@@ -32,13 +32,15 @@ var authData = {
 
 app.use(passport.initialize());
 app.use(passport.session());
-
 passport.serializeUser(function (user, done) {
-  done(null, user.id);
+  // 첫 로그인에 성공했다면 LocalStrategy의 첫번째 인자를 받음
+  done(null, user.email);
 });
 
-passport.deserializeUser(function (user, done) {
-  done(err, user);
+passport.deserializeUser(function (id, done) {
+  // 첫 로그인에 성공했다면 다음에 페이지 요청에는 deserializeUser를 사용하게 되고, user를 조회해서 반환해준다
+  console.log("d", id);
+  done(null, authData);
 });
 
 passport.use(
@@ -50,7 +52,7 @@ passport.use(
     function (username, password, done) {
       // 인증 검사 코드, username, password로 꼭 넘겨줘야되서 필드에서 지정해줌
       if (username === authData.email) {
-        if (passport === authData.password) {
+        if (password === authData.password) {
           done(null, authData);
         } else {
           done(null, false, {
