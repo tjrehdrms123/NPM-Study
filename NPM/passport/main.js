@@ -30,6 +30,17 @@ var authData = {
   nickname: "egoing",
 };
 
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.serializeUser(function (user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function (user, done) {
+  done(err, user);
+});
+
 passport.use(
   new LocalStrategy(
     {
