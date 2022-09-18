@@ -47,9 +47,7 @@ router.get("/logout", function (request, response, next) {
     }
     // 로그아웃이 시간차에 의해 안되는 문제는 수동으로 세션 삭제 destory
     request.session.destroy(function (err) {
-      request.session.save(function () {
-        response.redirect("/");
-      });
+      response.redirect("/");
     });
   });
 });
