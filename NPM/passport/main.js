@@ -24,6 +24,12 @@ app.use(
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 
+var authData = {
+  email: "wwe5455@naver.com",
+  password: "1",
+  nickname: "egoing",
+};
+
 passport.use(
   new LocalStrategy(
     {
@@ -31,7 +37,20 @@ passport.use(
       passwordField: "pwd",
     },
     function (username, password, done) {
-      console.log(username, password);
+      // 인증 검사 코드, username, password로 꼭 넘겨줘야되서 필드에서 지정해줌
+      if (username === authData.email) {
+        if (passport === authData.password) {
+          done(null, authData);
+        } else {
+          done(null, false, {
+            message: "Incorrect password",
+          });
+        }
+      } else {
+        done(null, false, {
+          message: "Incorrect username",
+        });
+      }
     }
   )
 );
