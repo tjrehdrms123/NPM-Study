@@ -6,8 +6,8 @@ var sanitizeHtml = require("sanitize-html");
 var template = require("../lib/template.js");
 
 var authData = {
-  email: "egoing777@gmail.com",
-  password: "111111",
+  email: "wwe5455@naver.com",
+  password: "1",
   nickname: "egoing",
 };
 

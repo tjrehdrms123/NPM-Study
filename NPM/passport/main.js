@@ -22,7 +22,19 @@ app.use(
 
 // passport는 express-session을 내부 적으로 사용하기 때문에 express-session 미들웨어 다음에 사용해야된다
 var passport = require("passport");
-var LocalStrategy = require("passport-local");
+var LocalStrategy = require("passport-local").Strategy;
+
+passport.use(
+  new LocalStrategy(
+    {
+      usernameField: "email",
+      passwordField: "pwd",
+    },
+    function (username, password, done) {
+      console.log(username, password);
+    }
+  )
+);
 
 app.post(
   "/auth/login_process",
