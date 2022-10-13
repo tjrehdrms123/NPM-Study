@@ -25,7 +25,6 @@ app.listen(3000, function () {
 
 ### 미들웨어
 > express는 next로 다음 미들웨어로 넘기는데, next의 인자의 여부로 결정된다. next에 아무 인자도 넣지 않으면 다음 미들웨어를 탄다
-<br/>
 > next 인자에 값을 넣지 않았기 때문에 최종 미들웨어가 호출되지 않는다 req로 다음 미들웨어에 값을 넘길 수 있다
 ```js
 app.get('/',Acontroller,Bcontroller);
