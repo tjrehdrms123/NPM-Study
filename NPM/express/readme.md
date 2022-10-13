@@ -24,28 +24,24 @@ app.listen(3000, function () {
 ```
 
 ### 미들웨어
-> express는 next로 다음 미들웨어로 넘기는데, next의 인자의 갯수로 결정한다 예를 들어 다음의 코드에
-인자가 4개 이기 때문에 "B"미들웨어를 탄다
+> express는 next로 다음 미들웨어로 넘기는데, next의 인자의 여부로 결정된다. next에 아무 인자도 넣지 않으면 다음 미들웨어를 탄다
 <br/>
-> return을 만나기 전에 미들웨어는 종료가 안되기 때문에 ```req.user = {...}```해당 형식으로 다음 미들웨어에 값을 넘길 수 있다
+> next 인자에 값을 넣지 않았기 때문에 최종 미들웨어가 호출되지 않는다 req로 다음 미들웨어에 값을 넘길 수 있다
 ```js
-app.get('/',(req,res,next)=>{
-  req.user = {
-    ...user,
-    des : "user info"
+app.get('/',Acontroller,Bcontroller);
+
+function Acontroller(req,res,next){
+  req.data = {
+    ...user
   }
-  next(user);
-});
-
-### A 미들웨어
-app.use((req,res,next)=>{
-  ...내용
-});
-
-### B 미들웨어
-app.use((result,req,res,next)=>{
-  console.log(`req.user === ${result}`);
-  ...내용
+  next();
+}
+function Bcontroller(req,res,next){
+  req.data // Acontroller에서 넘겨준 data가 들어있다
+  next(req.data);
+}
+app.use((req,res,next)=>{ 
+  console.log(req.data);
 });
 ```
 
